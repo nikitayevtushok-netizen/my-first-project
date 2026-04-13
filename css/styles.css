@@ -511,9 +511,42 @@ button {
     align-items: baseline;
 }
 
+.cake-card-meta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
 .cake-card-topline span {
     color: var(--accent-dark);
     font-weight: 800;
+}
+
+.cake-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    color: var(--accent-dark);
+    background: rgba(255, 255, 255, 0.88);
+    border: 1px solid rgba(191, 152, 142, 0.24);
+    box-shadow: 0 8px 18px rgba(139, 99, 90, 0.12);
+    transition: transform 180ms ease, box-shadow 180ms ease, background-color 180ms ease;
+}
+
+.cake-link:hover,
+.cake-link:focus-visible {
+    transform: translateY(-2px);
+    background: #fff;
+    box-shadow: 0 12px 22px rgba(139, 99, 90, 0.18);
+}
+
+.cake-link-icon {
+    width: 16px;
+    height: 16px;
+    fill: currentColor;
 }
 
 .benefits-grid,
@@ -563,6 +596,21 @@ button {
     gap: 2px;
 }
 
+.reviews-actions {
+    margin-top: 24px;
+    justify-content: center;
+}
+
+.reviews-more {
+    min-width: 220px;
+}
+
+.reviews-more-icon {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+}
+
 .contact-shell {
     display: grid;
     grid-template-columns: minmax(0, 0.95fr) minmax(350px, 1.05fr);
@@ -590,6 +638,46 @@ button {
     background: rgba(255, 255, 255, 0.76);
     border: 1px solid rgba(255, 255, 255, 0.82);
     box-shadow: 0 10px 24px rgba(139, 99, 90, 0.08);
+}
+
+.contact-form-card .contact-line {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    min-height: 140px;
+    justify-content: center;
+    border-color: rgba(255, 255, 255, 0.9);
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(255, 250, 246, 0.94));
+}
+
+.contact-form-card .contact-line::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background:
+        radial-gradient(120% 80% at 100% 0%, rgba(255, 228, 208, 0.35), transparent 58%),
+        radial-gradient(120% 80% at 0% 100%, rgba(245, 210, 220, 0.3), transparent 56%),
+        repeating-linear-gradient(
+            180deg,
+            rgba(255, 232, 214, 0.5) 0 18px,
+            rgba(255, 250, 244, 0.08) 18px 30px,
+            rgba(244, 205, 213, 0.36) 30px 48px,
+            rgba(255, 255, 255, 0.1) 48px 60px,
+            rgba(255, 226, 203, 0.42) 60px 78px,
+            rgba(255, 255, 255, 0.08) 78px 90px
+        );
+    opacity: 0.78;
+}
+
+.contact-form-card .contact-line > * {
+    position: relative;
+    z-index: 1;
+}
+
+.contact-form-card .contact-line strong {
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
 }
 
 .contact-line strong {
